@@ -1,14 +1,19 @@
 package com.example.hplaptop.apidemo;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -84,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
         Context ctx;
-        public ArrayList<SurveyModel> data;
-        public RecyclerAdapter(Context ctx, ArrayList<SurveyModel> temdata) {
+        public ArrayList<EmployeeModel> data;
+        public RecyclerAdapter(Context ctx, ArrayList<EmployeeModel> temdata) {
             this.ctx=ctx;
             this.data=temdata;
 
@@ -103,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            SurveyModel surveyModel;
+            EmployeeModel employeeModel;
 
-            SurveyModel product= data.get(position);
+            EmployeeModel product= data.get(position);
             holder.question_order.setText("question_order ="+product.question_order);
             holder.options.setText("Options ="+product.options);
             holder.question_id.setText("Question_Id = "+product.question_id);
