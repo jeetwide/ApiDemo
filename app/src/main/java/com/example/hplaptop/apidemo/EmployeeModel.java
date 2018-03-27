@@ -2,11 +2,16 @@ package com.example.hplaptop.apidemo;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.lang.reflect.Array;
+
 /**
  * Created by jeetendra.achtani on 22-01-2018.
  */
 
 public class EmployeeModel {
+
+    @SerializedName("details")
+    public Array details;
 
     @SerializedName("emp_id")
     public String emp_id;

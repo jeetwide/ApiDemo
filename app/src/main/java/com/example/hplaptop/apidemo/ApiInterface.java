@@ -1,9 +1,12 @@
 package com.example.hplaptop.apidemo;
 
+import com.google.gson.JsonObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
@@ -23,13 +26,19 @@ public interface ApiInterface {
             @Field("password") String email
     );*/
 
-    @FormUrlEncoded
+    //@POST("api.php")
+    //Call<EmployeeResponse> listEmployee(@Body JsonObject jsonObject);
+
+
     @POST("api.php")
-    Call<EmployeeResponse> listEmployee(
-            @Field("emp_id") String emp_id
+    Call<GetDetailsData> listEmployee(@Body JsonObject jsonObject);
+
+    //@POST("api.php")
+    //Call<EmployeeResponse> listEmployee(
+        //    @Field("action") String action
             //@Field("access_token") String access_token,
            // @Field("survey_id") String survey_id
-    );
+    //);
 
 
 
